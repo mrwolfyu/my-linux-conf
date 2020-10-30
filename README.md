@@ -1,6 +1,6 @@
 # my-linux-conf
 ## My Ubuntu SSD tweeks
-1. in file /etc/fstab added discard,noatime,nodiratime and tmpfs
+1. in file /etc/fstab added discard,noatime,nodiratime and tmpfs. Comment out "/swapfile ..." line if exists.
 ```bash
 UUID=SOME-ROOT-UUID / ext4 discard,noatime,nodiratime,errors=remount-ro 0 1
 
