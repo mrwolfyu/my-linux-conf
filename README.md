@@ -13,3 +13,18 @@ tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0
 vm.swappiness = 0
 ```
 source: [How to tweak and optimize SSD for Ubuntu, Linux Mint](https://itbeginner.net/tweak-optimize-ssd-ubuntu-linux-mint.html)
+
+
+## AUDIO MIC PROBLEM
+
+remap example
+/etc/pulse/default.pa
+```bash
+load-module module-remap-source master=alsa_input.usb-046d_0809_B84881A3-02.mono-fallback rate=16000 
+```
+chane default rate (per user)
+```bash
+mkdir $HOME/.pulse/
+echo "default-sample-rate = 16000" >> $HOME/.pulse/daemon.conf
+pulseaudio --kill && pulseaudio --start
+```
